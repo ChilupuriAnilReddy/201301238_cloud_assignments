@@ -1,4 +1,6 @@
 section .data
+   msg db "", 0xA,0xD 
+   len equ $ - msg
    num1: equ 3
    num2: equ 4
    SYS_READ equ 3
@@ -16,20 +18,21 @@ _start:
    mov eax, num1
    mov ebx, num2   
    add eax, ebx
-   add eax, '0'   	  
+   add eax, '0' 
+
    mov [res], eax
-   mov eax, SYS_WRITE        
+   mov ecx, res
+   mov edx, 1
    mov ebx, STD_OUT
-   mov ecx, res         
-   mov edx, 1        
+   mov eax, SYS_WRITE        
    int 0x80  
-   mov eax, SYS_WRITE        
-   mov ebx, STD_OUT
    mov ecx, NEW_LINE         
-   mov edx, 1        
+   mov edx, 1
+   mov ebx, STD_OUT
+   mov eax, SYS_WRITE        
+           
    int 0x80 
    mov   eax, SYS_EXIT
-   mov   edi, EXIT_CODE	
    int 0x80	
 	
 
