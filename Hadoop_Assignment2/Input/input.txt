@@ -1,0 +1,9 @@
+Name:Anil
+Phone Number:1234567890
+Name:Reddy
+Class:1
+Phone Number:9542114848
+Class:2
+Name:Chilupuri
+Class:5
+Phone Number:9346754556
